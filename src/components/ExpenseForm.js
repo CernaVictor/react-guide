@@ -23,7 +23,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: title,
-      amount: amount,
+      amount: +amount,
       date: new Date(date),
     };
     props.onSaveExpenseData(expenseData);
@@ -58,6 +58,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="reset" onClick={() => props.formModalClose()}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
